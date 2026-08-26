@@ -10,7 +10,7 @@ public class Main {
         }
 
         System.out.println("================");
-        System.out.println(PrimeFinder.findPrimesInRange(100, 100000));
+        System.out.println(PrimeFinder.findPrimesInRange(100, 100000)); //demonstation of method findPrimesInRange
 
     }
 }
