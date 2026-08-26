@@ -1,3 +1,5 @@
+package Features;
+
 public class PrimeFinder {
 
     public PrimeFinder() {
