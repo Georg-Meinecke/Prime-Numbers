@@ -19,8 +19,6 @@ public class GUI {
         } else {
             JOptionPane.showMessageDialog(null, outputMSG2);
         }
-
-
     }
 
     public static void main(String[] args) {
