@@ -11,7 +11,7 @@ public class Main {
         }
 
         System.out.println("================");
+        System.out.println(primeFinder.findPrimesInRange(100, 100000));
 
-        System.out.println(primeFinder.findPrimesInRange(100, 200));
     }
 }

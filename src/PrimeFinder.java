@@ -7,7 +7,7 @@ public class PrimeFinder {
     public Boolean checkIfPrime(int input) {
         boolean isPrime = true;
         if (input <= 1) return false; // 0 and 1 no primes
-        for (int i = 2; i < input; i++) {
+        for (int i = 2; i < (int) Math.sqrt(input); i++) {
             if (input % i == 0) {
                 isPrime = false;
             }
@@ -18,13 +18,12 @@ public class PrimeFinder {
             return false;
         }
     }
-
     public String findPrimesInRange(int rangeStart, int rangeStop) {
         String outputMSG = "";
 
         for (int i = rangeStart; i <= rangeStop; i++) {
             if (checkIfPrime(i)) {
-                outputMSG += i + "; ";
+                outputMSG += i + "\n";
             }
         }
         return outputMSG;
