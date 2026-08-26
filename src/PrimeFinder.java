@@ -18,4 +18,15 @@ public class PrimeFinder {
             return false;
         }
     }
+
+    public String findPrimesInRange(int rangeStart, int rangeStop) {
+        String outputMSG = "";
+
+        for (int i = rangeStart; i <= rangeStop; i++) {
+            if (checkIfPrime(i)) {
+                outputMSG += i + "; ";
+            }
+        }
+        return outputMSG;
+    }
 }
