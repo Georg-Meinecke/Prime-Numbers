@@ -30,7 +30,7 @@ public class GUI extends JFrame implements ActionListener {
 
         middlePanel = new JPanel();
         middlePanel.setLayout(new FlowLayout());
-        middlePanel.setBackground(Color.BLACK);
+        middlePanel.setBackground(new Color(51, 104, 23));
 
         btnCheckIfPrime = new JButton("Check if is a prime number");
         btnCheckIfPrime.addActionListener(this);
@@ -54,19 +54,8 @@ public class GUI extends JFrame implements ActionListener {
         if (e.getSource() == btnCheckIfPrime) {
             String inputStr = inputField.getText();
             int num = Integer.parseInt(inputStr);
-
-            /*
-            if (PrimeFinder.checkIfPrime(num)) {
-                outputLabel.setText(num + " is a prime number");
-            } else {
-                outputLabel.setText(num + " is not a prime number");
-            }
-
-             */
-
-            outputLabel.setText(PrimeFinder.checkIfPrime(num) ? num + " is a prime number" : num + " is not a prime number");
-            //  ERROR: EVERY NUMBER IS SAID TO BE A PRIME NUMBER, IT IS NOT RIGHT!!!!!!!!!!!!!!!!!!!!!!!!!
-
+           String outputMSG = PrimeFinder.checkIfPrime(num) ? num + " is a prime number" : num + " is not a prime number";
+           outputLabel.setText(outputMSG);
         }
     }
 }

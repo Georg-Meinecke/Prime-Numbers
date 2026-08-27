@@ -1,6 +1,6 @@
 import Features.PrimeFinder;
 
-public class Main {
+public class Playground {
 
     public static void main(String[] args) {
 
