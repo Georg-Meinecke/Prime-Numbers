@@ -12,6 +12,7 @@ public class GUI extends JFrame implements ActionListener {
     private JPanel mainPanel;
     private JPanel middlePanel;
     private JButton btnCheckIfPrime;
+    private JButton btnFPIR; //findPrimesInRange
     private JLabel outputLabel;
     private JTextField inputField;
 
@@ -32,9 +33,13 @@ public class GUI extends JFrame implements ActionListener {
         middlePanel.setLayout(new FlowLayout());
         middlePanel.setBackground(new Color(51, 104, 23));
 
-        btnCheckIfPrime = new JButton("Check if is a prime number");
+        btnCheckIfPrime = new JButton("Check If It Is A Prime Number");
         btnCheckIfPrime.addActionListener(this);
         middlePanel.add(btnCheckIfPrime);
+
+        btnFPIR = new JButton("Find Primes In Range");
+        btnFPIR.addActionListener(this);
+        middlePanel.add(btnFPIR);
 
         mainPanel.add(middlePanel, BorderLayout.CENTER);
         outputLabel = new JLabel("Test", SwingConstants.CENTER);
@@ -56,6 +61,17 @@ public class GUI extends JFrame implements ActionListener {
             int num = Integer.parseInt(inputStr);
            String outputMSG = PrimeFinder.checkIfPrime(num) ? num + " is a prime number" : num + " is not a prime number";
            outputLabel.setText(outputMSG);
+        }
+
+        if (e.getSource() == btnFPIR) {
+
+            String str1 = JOptionPane.showInputDialog("range-start: ");
+            String str2 = JOptionPane.showInputDialog("range-stop: ");
+            int num1 = Integer.parseInt(str1);
+            int num2 = Integer.parseInt(str2);
+
+            String result = PrimeFinder.findPrimesInRange(num1, num2, ";  ");
+            JOptionPane.showMessageDialog(null, "Prime-Numbers in range " + num1 + " and " + num2 + ": \n" + result);
         }
     }
 }

@@ -1,5 +1,8 @@
 package Features;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class PrimeFinder {
 
     public PrimeFinder() {
@@ -20,14 +23,19 @@ public class PrimeFinder {
             return false;
         }
     }
-    public static String findPrimesInRange(int rangeStart, int rangeStop) {
-        String outputMSG = "";
+    public static String findPrimesInRange(int rangeStart, int rangeStop, String delimiter) {
+
+        List<String> primes = new ArrayList<>();
 
         for (int i = rangeStart; i <= rangeStop; i++) {
             if (checkIfPrime(i)) {
-                outputMSG += i + "\n";
+                primes.add(String.valueOf(i));
             }
         }
-        return outputMSG;
+        return String.join(delimiter, primes);
+    }
+
+    public static String findPrimesInRange(int rangeStart, int rangeStop) {
+        return findPrimesInRange(rangeStart, rangeStop, "\n");
     }
 }
